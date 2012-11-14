@@ -1,0 +1,88 @@
+Suffix tree construction (stc)
+==============================
+
+Implementation and benchmark of some basic algorithms
+for the construction of the suffix tree over the text
+coming from the input file.
+
+This application provides two executables:
+st	to create the suffix tree entirely in memory
+	for the whole input text
+stsw	to create the suffix tree for just a constant-sized
+	portion of the input text (the sliding window)
+	and maintain it while the sliding window is shifted
+	along the whole input text.
+
+Requirements:
+-------------
+
+For compiling:
+
+C compiler at least partially conforming to the C99 standard, because of:
+	- the type unsigned long long
+	- "%zu" printf format length specifier for size_t
+
+and also at least partially conforming to the POSIX.1-2001 standard,
+because of:
+	- function random and related stuff
+	- function iconv and related stuff
+	- function getopt and related stuff
+
+=== Optional compiling requirements ===
+
+C compiler at least partially conforming to the POSIX.1c standard,
+because of the usage of POSIX threads (pthread.h).
+
+
+
+For building the documentation:
+
+Any non-ancient version of doxygen.
+
+Compilation:
+------------
+
+It should be as easy as:
+
+make
+
+To build the documentation, simply execute:
+
+doxygen
+
+or
+
+make doc
+
+Usage:
+------
+
+Run the compiled executables without any parameters
+and follow the provided instructions.
+
+Generated documentation in HTML format will be placed in
+doc/html subdirectory. Navigate your web browser
+to index.html to start using it.
+
+Copyright and license
+=====================
+
+Copyright 2012 Peter Bašista
+
+stc is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Contact
+-------
+
+Peter Bašista	pbasista@gmail.com

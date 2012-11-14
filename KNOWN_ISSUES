@@ -1,0 +1,23 @@
+The following is a list of known problems
+which have not been resolved yet.
+
+1.	Implementation of a suffix tree construction over a sliding
+	window (stsw) has broken character conversion
+	routine when reading an input file.
+	It results in SIGSEGV signal when in function iconv.
+	This problem can be experienced after iconv experiences
+	E2BIG error. Then its subsequent call fails.
+	This occurs only when compiled with support
+	for wide characters, because E2BIG error cannot
+	error with standard, 1 byte characters.
+
+2.	Slowscan is implemented so that it always starts from explicit vertex.
+	It would be desirable to adjust it so that it could start
+	the comparison from an arbitrary edge character.
+	This would probably decrease the time complexity
+	on some input files dramatically.
+
+3.	There is no option to set the preferred size of internal tables.
+	It would be nice to at least be able to set the initial size
+	of the table tbranch and the hash table tedge in order to
+	avoid possible reallocations and rehashing.
